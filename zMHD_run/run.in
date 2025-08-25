@@ -1,0 +1,66 @@
+!  -*-f90-*-  (for Emacs)    vim:set filetype=fortran:  (for vim)
+!
+!  Run parameters
+!
+&run_pars
+!  nt=400000, it1=200, isave=2000, itorder=3,
+!  nt=1, it1=1, isave=200, itorder=3,
+  cdt=0.9, cdtv=0.3, dtmin=1e-6,
+  dsnap=100, d2davg=10, ! time intervals for writing snapshots and phi-averages
+  lwrite_aux=T
+  tau_aver1=10.
+!  max_walltime=42000.
+  it_rmv=1
+!  lread_oldsnap_nomag=T
+  dvid = 10., r_rslice=.2, nth_rslice=50, nph_rslice=50 ! slices from spherical radius r_rslice
+/
+&eos_run_pars
+/
+&hydro_run_pars
+!  dampuext = 5, rdampext=1.03, wdamp = 0.02,
+  dampuext = 50, rdampext=.45, wdamp = 0.01,
+  Omega=0  ! rotation rate
+  lupw_uu=T
+  luu_sph_as_aux=T
+/
+&density_run_pars
+  lupw_lnrho=T
+  lconserve_total_mass=T
+  total_mass=0.41170
+/
+&grav_run_pars
+/
+&entropy_run_pars
+  iheatcond='K-const','chit'
+  hcond0 = 6.7e-5,
+  luminosity =0.0003, wheat=0.1,
+  cooltype='cs2-rho', cool=5., rcool=0.52, wcool=0.02,
+  lss_running_aver_as_var=T
+  lchit_fluct=T
+  lchit_noT=T
+  chi_t1=8.375e-5
+  chit_fluct_prof1=.1, chit_fluct_prof2=.1, widthss=0.03
+  lupw_ss=T
+  cs2cool = 2.0711014800380778
+/
+&magnetic_run_pars
+  eta=2.5e-5
+  iresistivity = 'eta-rdep', 'hyper3-mesh'
+  eta_hyper3_mesh=6
+  rdep_profile = 'step'
+  eta_jump = 0.01  ! factor by which core value is changed above
+  eta_r0 = 0.30     ! radius at which step happens
+  eta_rwidth=-0.06 ! width of transition in the profile
+!  lrun_initaa=T
+  lupw_aa=T
+  lbb_sph_as_aux=T
+/
+&viscosity_run_pars
+  nu=1.75e-5
+  ivisc='nu-profr', 'hyper3-mesh'
+  nu_hyper3_mesh=6
+  nu_jump = 0.01   ! factor
+  xnu=0.30          ! radius at which first step happens
+  xnu2=10.         ! radius at which second step (to opposite direction!) happens
+  widthnu=0.06     ! width of transition in the profile
+/
