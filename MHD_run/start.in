@@ -1,0 +1,45 @@
+!  -*-f90-*-  (for Emacs)    vim:set filetype=fortran:  (for vim)
+!
+!  Initialisation parameters
+!
+&init_pars
+  xyz0  = -1.1,-1.1,-1.1,       ! first corner of box
+  Lxyz  =  2.2, 2.2, 2.2,       ! box size
+  lperi =  F  , F  , F,         ! periodic direction?
+  lsphere_in_a_box = T
+  r_ext = 1.
+  bcx = 'a','s','s','a2','sT','sT' ,'a','s','s'
+  bcy = 's','a','s','a2','sT','sT' ,'s','a','s'
+  bcz = 's','s','a','a2','sT','sT' ,'s','s','a'
+  lwrite_aux=T
+/
+&eos_init_pars
+  cs0 = 1.8, rho0 = 1.
+/
+&hydro_init_pars
+ inituu = 'gaussian-noise-rprof',
+ ampluu = 1e-4
+/
+&density_init_pars
+!  initlnrho = 'isentropic-star',
+/
+&grav_init_pars
+  ipotential = 'A0-star'
+/
+&entropy_init_pars
+!  initss = 'isentropic-star'
+  lss_running_aver_as_var=T
+/
+&magnetic_init_pars
+  initaa = 'gaussian-noise-rprof'
+  amplaa = 1e-6
+/
+&initial_condition_pars
+  star_luminosity=1e-3          ! not functional yet
+  wheat=0.1                     ! not functional yet
+  Rstar=1., nad=1.5             ! radius of the star and adiabatic index
+  npoly1=1.5, npoly2=3.25       ! polytropic indices in the lower and upper layers
+  npolyK1=0, npolyK2=3.25       ! not functional yet
+  r1_poly=0.2                   ! radius at which the polytropic index changes
+  width_npoly=0.05              ! with of transition
+/
