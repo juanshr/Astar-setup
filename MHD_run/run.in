@@ -4,8 +4,7 @@
 !
 &run_pars
 !  nt=5000000, it1=200, isave=2000, itorder=3,
-  nt=350000, it1=200, isave=400, itorder=3,
-!  nt=1, it1=1, isave=200, itorder=3,
+  nt=1, it1=1, isave=200, itorder=3,
   cdt=0.9, cdtv=0.3, dtmin=1e-6,
   dsnap=100, d2davg=10, ! time intervals for writing snapshots and phi-averages
   lwrite_aux=T
@@ -18,7 +17,7 @@
 /
 &hydro_run_pars
   dampuext = 5, rdampext=1.03, wdamp = 0.02,
-  Omega=2.2890620511188877  ! rotation rate
+  Omega=0  ! rotation rate
   lupw_uu=T
   luu_sph_as_aux=T
 /
