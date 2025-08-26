@@ -60,7 +60,7 @@
   ivisc='nu-profr', 'hyper3-mesh'
   nu_hyper3_mesh=6
   nu_jump = 0.01   ! factor
-  xnu=0.30          ! radius at which first step happens
+  xnu=0.35          ! radius at which first step happens
   xnu2=10.         ! radius at which second step (to opposite direction!) happens
   widthnu=0.06     ! width of transition in the profile
 /
