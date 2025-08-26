@@ -11,49 +11,49 @@ Furthermore, a zoom model was presented, where 50% of the radius was retained, i
 available to resolve convection inside the core.  
 
 
-The full star setups, the so-called MHD and MHD\* groups, are contained in the folders 'MHD_run' and 'MHDI_run', respectively,
-and the zoom setup is in 'zMHD_run'.
+The full star setups, the so-called MHD and MHD\* groups, are contained in the folders 'MHD\_run' and 'MHDI\_run', respectively,
+and the zoom setup is in 'zMHD\_run'.
 
-##Physical description of the model
+## Physical description of the model
 In each run, the following non-ideal fully compressible MHD equation set is solved: 
 
 $$
-\displaylines{
-\frac{\partial \bm{A}}{\partial t} = \bm{U} \times \bm{B} - \eta \mu_0 \bm{J}, \\\
-\frac{D \ln \rho}{D t} = - \bm{\nabla} \bm{\cdot} \bm{U}, \\\
-\frac{D \bm{U}}{D t} = - \bm{\nabla} \Phi - \frac{1}{\rho} \left( \bm{\nabla} p - \bm{\nabla} \bm{\cdot}2 \nu \rho \bm{S} + \bm{J} \times \bm{B} \right)- 2 \bm{\Omega}\times \bm{U} + \bm{f}_d, \\\
-T \frac{Ds}{Dt} = - \frac{1}{\rho} \left[ \bm{\nabla} \bm{\cdot} (\bm{F}_\text{rad} + \bm{F}_\text{SGS})  + \mathcal{H} - \mathcal{C} + \mu_0 \eta \bm{J}^2 \right] + 2 \nu \bm{S}^2,
-}
+\begin{align}
+    \frac{\partial \mathbm{A}}{\partial t} &= \mathbm{U} \times \mathbm{B} - \eta \mu_0 \mathbm{J}, \\\
+    \frac{D \ln \rho}{D t} &= - \mathbm{\nabla} \mathbm{\cdot} \mathbm{U}, \\\
+    \frac{D \mathbm{U}}{D t} &= - \mathbm{\nabla} \Phi - \frac{1}{\rho} \left( \mathbm{\nabla} p - \mathbm{\nabla} \mathbm{\cdot}2 \nu \rho \mathbm{S} + \mathbm{J} \times \mathbm{B} \right)- 2 \mathbm{\Omega}\times \mathbm{U} + \mathbm{f}_d, \\\
+    T \frac{Ds}{Dt} &= - \frac{1}{\rho} \left[ \mathbm{\nabla} \mathbm{\cdot} (\mathbm{F}_\text{rad} + \mathbm{F}_\text{SGS})  + \mathcal{H} - \mathcal{C} + \mu_0 \eta \mathbm{J}^2 \right] + 2 \nu \mathbm{S}^2, 
+\end{align}
 $$
 
-where $$\bm{A}$$ is the magnetic vector potential, $$\bm{U}$$ is the flow
-velocity, $$\bm{B} = \bm{\nabla} \times \bm{A}$$ is the magnetic field,
+where $$\mathbm{A}$$ is the magnetic vector potential, $$\mathbm{U}$$ is the flow
+velocity, $$\mathbm{B} = \mathbm{\nabla} \times \mathbm{A}$$ is the magnetic field,
 $$\eta$$ is the magnetic diffusivity, $$\mu_0$$ is the magnetic
-permeability of vacuum, $$\bm{J} = \bm{\nabla} \times \bm{B}/\mu_0$$ is
-the current density given by Ampère's law, $$D/Dt = \partial/\partial t + \bm{U} \bm{\cdot}\bm{\nabla}$$ 
+permeability of vacuum, $$\mathbm{J} = \mathbm{\nabla} \times \mathbm{B}/\mu_0$$ is
+the current density given by Ampère's law, $$D/Dt = \partial/\partial t + \mathbm{U} \mathbm{\cdot}\mathbm{\nabla}$$ 
 is the advective derivative, $$\rho$$ is the mass density, $$p$$ is the pressure, $$\Phi$$ is
 the fixed gravitational potential, given by the Pad\'e approximation obtained from 1D stellar structure model.
-$$\nu$$ is the kinematic viscosity, $$\bm{S}$$ is the traceless
+$$\nu$$ is the kinematic viscosity, $$\mathbm{S}$$ is the traceless
 rate-of-strain tensor, given by
 
 $$
 \displaylines{
-S_{ij} = \frac{1}{2}(\partial_j U_i + \partial_i U_j) - \frac{1}{3}\delta_{ij} \bm{\nabla} \bm{\cdot} \bm{U},
+S_{ij} = \frac{1}{2}(\partial_j U_i + \partial_i U_j) - \frac{1}{3}\delta_{ij} \mathbm{\nabla} \mathbm{\cdot} \mathbm{U},
 }
 $$
 
 where $$\delta_{ij}$$ is the Kronecker
-delta. $$\bm{\Omega}=(0,0,\Omega_0)$$ is the rotation vector and
-$$\bm{f}_\mathrm{d}$$ describes damping of flows
+delta. $$\mathbm{\Omega}=(0,0,\Omega_0)$$ is the rotation vector and
+$$\mathbm{f}_\mathrm{d}$$ describes damping of flows
 exterior to the star. $$T$$ is the temperature, $$s$$ is
 the
-specific entropy, $$\bm{F}_\mathrm{rad}$$ is the radiative flux and
-$$\bm{F}_\mathrm{SGS}$$ is the subgrid-scale (SGS) entropy
+specific entropy, $$\mathbm{F}_\mathrm{rad}$$ is the radiative flux and
+$$\mathbm{F}_\mathrm{SGS}$$ is the subgrid-scale (SGS) entropy
 flux. The radiative energy flux is given by
 
 $$
 \displaylines{
-\bm{F}_\mathrm{rad} = - K \bm{\nabla} T,
+\mathbm{F}_\mathrm{rad} = - K \mathbm{\nabla} T,
 }
 $$
 
