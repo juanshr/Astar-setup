@@ -19,41 +19,41 @@ In each run, the following non-ideal fully compressible MHD equation set is solv
 
 $$
 \begin{align}
-    \frac{\partial \mathbm{A}}{\partial t} &= \mathbm{U} \times \mathbm{B} - \eta \mu_0 \mathbm{J}, \\\
-    \frac{D \ln \rho}{D t} &= - \mathbm{\nabla} \mathbm{\cdot} \mathbm{U}, \\\
-    \frac{D \mathbm{U}}{D t} &= - \mathbm{\nabla} \Phi - \frac{1}{\rho} \left( \mathbm{\nabla} p - \mathbm{\nabla} \mathbm{\cdot}2 \nu \rho \mathbm{S} + \mathbm{J} \times \mathbm{B} \right)- 2 \mathbm{\Omega}\times \mathbm{U} + \mathbm{f}_d, \\\
-    T \frac{Ds}{Dt} &= - \frac{1}{\rho} \left[ \mathbm{\nabla} \mathbm{\cdot} (\mathbm{F}_\text{rad} + \mathbm{F}_\text{SGS})  + \mathcal{H} - \mathcal{C} + \mu_0 \eta \mathbm{J}^2 \right] + 2 \nu \mathbm{S}^2, 
+    \frac{\partial \mathbf{A}}{\partial t} &= \mathbf{U} \times \mathbf{B} - \eta \mu_0 \mathbf{J}, \\\
+    \frac{D \ln \rho}{D t} &= - \mathbf{\nabla} \mathbf{\cdot} \mathbf{U}, \\\
+    \frac{D \mathbf{U}}{D t} &= - \mathbf{\nabla} \Phi - \frac{1}{\rho} \left( \mathbf{\nabla} p - \mathbf{\nabla} \mathbf{\cdot}2 \nu \rho \mathbf{S} + \mathbf{J} \times \mathbf{B} \right)- 2 \mathbf{\Omega}\times \mathbf{U} + \mathbf{f}_d, \\\
+    T \frac{Ds}{Dt} &= - \frac{1}{\rho} \left[ \mathbf{\nabla} \mathbf{\cdot} (\mathbf{F}_\text{rad} + \mathbf{F}_\text{SGS})  + \mathcal{H} - \mathcal{C} + \mu_0 \eta \mathbf{J}^2 \right] + 2 \nu \mathbf{S}^2, 
 \end{align}
 $$
 
-where $$\mathbm{A}$$ is the magnetic vector potential, $$\mathbm{U}$$ is the flow
-velocity, $$\mathbm{B} = \mathbm{\nabla} \times \mathbm{A}$$ is the magnetic field,
+where $$\mathbf{A}$$ is the magnetic vector potential, $$\mathbf{U}$$ is the flow
+velocity, $$\mathbf{B} = \mathbf{\nabla} \times \mathbf{A}$$ is the magnetic field,
 $$\eta$$ is the magnetic diffusivity, $$\mu_0$$ is the magnetic
-permeability of vacuum, $$\mathbm{J} = \mathbm{\nabla} \times \mathbm{B}/\mu_0$$ is
-the current density given by Ampère's law, $$D/Dt = \partial/\partial t + \mathbm{U} \mathbm{\cdot}\mathbm{\nabla}$$ 
+permeability of vacuum, $$\mathbf{J} = \mathbf{\nabla} \times \mathbf{B}/\mu_0$$ is
+the current density given by Ampère's law, $$D/Dt = \partial/\partial t + \mathbf{U} \mathbf{\cdot}\mathbf{\nabla}$$ 
 is the advective derivative, $$\rho$$ is the mass density, $$p$$ is the pressure, $$\Phi$$ is
 the fixed gravitational potential, given by the Pad\'e approximation obtained from 1D stellar structure model.
-$$\nu$$ is the kinematic viscosity, $$\mathbm{S}$$ is the traceless
+$$\nu$$ is the kinematic viscosity, $$\mathbf{S}$$ is the traceless
 rate-of-strain tensor, given by
 
 $$
 \displaylines{
-S_{ij} = \frac{1}{2}(\partial_j U_i + \partial_i U_j) - \frac{1}{3}\delta_{ij} \mathbm{\nabla} \mathbm{\cdot} \mathbm{U},
+S_{ij} = \frac{1}{2}(\partial_j U_i + \partial_i U_j) - \frac{1}{3}\delta_{ij} \mathbf{\nabla} \mathbf{\cdot} \mathbf{U},
 }
 $$
 
 where $$\delta_{ij}$$ is the Kronecker
-delta. $$\mathbm{\Omega}=(0,0,\Omega_0)$$ is the rotation vector and
-$$\mathbm{f}_\mathrm{d}$$ describes damping of flows
+delta. $$\mathbf{\Omega}=(0,0,\Omega_0)$$ is the rotation vector and
+$$\mathbf{f}_\mathrm{d}$$ describes damping of flows
 exterior to the star. $$T$$ is the temperature, $$s$$ is
 the
-specific entropy, $$\mathbm{F}_\mathrm{rad}$$ is the radiative flux and
-$$\mathbm{F}_\mathrm{SGS}$$ is the subgrid-scale (SGS) entropy
+specific entropy, $$\mathbf{F}_\mathrm{rad}$$ is the radiative flux and
+$$\mathbf{F}_\mathrm{SGS}$$ is the subgrid-scale (SGS) entropy
 flux. The radiative energy flux is given by
 
 $$
 \displaylines{
-\mathbm{F}_\mathrm{rad} = - K \mathbm{\nabla} T,
+\mathbf{F}_\mathrm{rad} = - K \mathbf{\nabla} T,
 }
 $$
 
